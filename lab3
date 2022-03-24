@@ -70,3 +70,21 @@ def lista_zakupow(** pl):
 print("Koszt tych zakupow to: " , lista_zakupow(awokado=8, tofu=11, mleko=5, kasza=3, banany=5), "zł")
 
 #zad9
+#PAKIET_CIAGI
+#arytmetyczny
+ def n(a1, r, n):
+     return a1 + (n - 1) * r
+
+def sn(a1, r, n):
+     return (a1 + n(a1, r, n)) * n / 2
+ #geometryczny
+ def n(a1, q, n):
+     return a1 * q ** (n - 1)
+
+ def sn(a1, q, n):
+    return a1 * (1 - q ** n) / (1 - q)
+
+from PAKIET_CIAGI import *
+
+print(arytmetyczny.n(5, 8, 6))
+print(geometryczny.sn(1, 88, 75))
