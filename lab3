@@ -1,37 +1,72 @@
  #zad1
-# a = [1-x for x in range (1,11,1)]
-# b = [4**i for i in range (8)]
-# c = [x for x in b if x % 2 ==0]
-# print (a)
-# print (b)
-# print (c)
+ a = [1-x for x in range (1,11,1)]
+ b = [4**i for i in range (8)]
+ c = [x for x in b if x % 2 ==0]
+ print (a)
+ print (b)
+ print (c)
 
 #zad2
-# import random
-# lista1 = [random.randrange(1,1000000) for i in range(10)]
-# print("Lista zawierająca losowe wartości : " + str(lista1))
-#
-# lista2= [i for i in lista1 if i % 2 == 0]
-# print ("Liczby parzyste z tej listy to: " + str(lista2))
+ import random
+ lista1 = [random.randrange(1,1000000) for i in range(10)]
+ print("Lista zawierająca losowe wartości : " + str(lista1))
 
-#zad3 ????
-# produkty = {
-#     "pomidory" : "kg",
-#     "chleb" : "szt.",
-#     "ser" : "kg",
-#     "woda" : "butelka",
-#     "kostka masła" : "szt."
-# }
-# wart_szt = {value = "szt." for (key,value) in produkty()}
-# print (wart_szt)
+lista2= [i for i in lista1 if i % 2 == 0]
+print ("Liczby parzyste z tej listy to: " + str(lista2))
+
+#zad3
+produkty = {"pomidory" : "kg", "chleb" : "szt.", "ser" : "kg", "woda" : "butelka", "kostka masła" : "szt."}
+wart_szt = []
+print(produkty)
+for key, value in produkty.items():
+    if produkty[key] == 'szt.':
+        wart_szt.append(key)
+
+print(wart_szt)
 
 #zad4
-# import math
-# def is_rightangled(a, b, c):
-#     return (b**2 + a**2 == c**2)
-# print(is_rightangled(2,4,5))
+def right_triangle(a, b, c):
+    if (a**2 + b**2 == c**2) or  (a**2 + c**2 == b**2) or (b**2 + c**2 == a**2):
+        print("Jest prostokątny.")
+    else:
+        print("Nie jest prostokątny.")
+
+
+a = int(input("Podaj dlugosc pierwszego boku:"))
+b = int(input("Podaj dlugosc drugiego boku:"))
+c = int(input("Podaj dlugosc trzeciego  boku:"))
+
+right_triangle(a, b, c)
+
 
 #zad5
-import math
-def pole_trapezu (a,b,h)
+def pole_trapezu(a, b, h):
+    return (a+b)*h/2
+print(pole_trapezu(20, 20, 5))
+
+#zad6
+def iloczyn_el_ciagu (a1,b,ile):
+    for x in range(ile):
+        a1 = a1*b
+    return a1
+
+print(iloczyn_el_ciagu(3,6,5))
     
+#zad7
+def iloczyn_zad7(*ciag):
+    if len(ciag) == 0:
+        return 0
+    else:
+        iloczyn = 1
+        for x in ciag:
+            iloczyn *= x
+    return iloczyn
+print(iloczyn_zad7(66,67,68,69,70))
+
+#zad8
+def lista_zakupow(** pl):
+    print("Wszystkich produktów jest", len(pl.keys()))
+    return sum(pl.values())
+print("Koszt tych zakupow to: " , lista_zakupow(awokado=8, tofu=11, mleko=5, kasza=3, banany=5), "zł")
+
+#zad9
